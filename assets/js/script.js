@@ -17,7 +17,7 @@ function randomEmail() {
     .then(res => res.json())
     .then(dat => {
 
-        ul_el.innerHTML += `<li>${dat.response}</li>`
+        ul_el.innerHTML += `<li class="list-group-item">${dat.response}</li>`
 
     })
     .catch(err => {
