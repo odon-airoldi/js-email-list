@@ -17,7 +17,9 @@ function randomEmail() {
     .then(res => res.json())
     .then(dat => {
 
-        ul_el.innerHTML += `<li class="list-group-item">${dat.response}</li>`
+        const {response : email} = dat
+
+        ul_el.innerHTML += `<li class="list-group-item">${email}</li>`
 
     })
     .catch(err => {
@@ -40,6 +42,7 @@ randomEmails(10)
 
 button_el.addEventListener('click', function() {
 
+    ul_el.innerHTML = ''
     randomEmails(10)
 
 })
